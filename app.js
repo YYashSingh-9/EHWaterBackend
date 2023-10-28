@@ -15,8 +15,6 @@ const app = express();
 // * Global middleware (CORS) (Cross Origin Resource Sharing)
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    credentials: true,
     exposedHeaders: ["SET-COOKIE"],
     methods: ["PATCH", "GET", "PUT", "POST", "HEAD", "DELETE"],
   })
@@ -47,6 +45,10 @@ app.use(compression());
 app.use("/api/v3/user", userRouter);
 app.use("/api/v3/issues", IssueThreadRouter);
 app.use("/api/v3/reviews", ReviewRouter);
+app.all("*", (req, res, next) => {
+  const err = new appError(`Can't identify this url${req.originalUrl}`, 400);
+  next(err);
+});
 app.use(ErrorController);
 
 module.exports = app;
