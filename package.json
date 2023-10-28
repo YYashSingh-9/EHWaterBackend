@@ -1,0 +1,26 @@
+{
+  "name": "ehbackend",
+  "version": "1.0.0",
+  "description": "eh backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "Yash",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.2.0",
+    "mongoose": "^7.6.3",
+    "validator": "^13.11.0",
+    "xss-clean": "^0.1.4"
+  }
+}
